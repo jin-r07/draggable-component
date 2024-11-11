@@ -91,11 +91,11 @@ export default function Index() {
                                     ${isHovered || isActive ? "bg-opacity-20" : "bg-opacity-0"}`}
                                 onMouseEnter={() => setHoveredIcon(item.for)}
                                 onMouseLeave={() => setHoveredIcon(null)}>
-                                <div className="relative xl:w-[2.5vw] w-10 xl:h-[4.5vh] h-10">
+                                <div className="xl:w-[2.5vw] w-10 xl:h-[4.5vh] h-10">
                                     <img
                                         src={item.icon}
                                         alt={item.label}
-                                        className="object-contain"
+                                        className="object-contain w-full h-full"
                                     />
                                 </div>
                                 {/* Label Below Icon */}
