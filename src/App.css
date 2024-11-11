@@ -1,0 +1,61 @@
+* {
+    cursor: default;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Standard syntax */
+}
+
+@font-face {
+    font-family: "DMSans";
+    src: url("./fonts/DMSans-Regular-BF64376d323f095.woff2") format("woff2");
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.slider::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+
+@media (min-width: 640px) {
+    .slider::-webkit-slider-thumb {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+@media (min-width: 640px) {
+    .slider::-moz-range-thumb {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .slider::-webkit-slider-thumb {
+        width: 0.8vw;
+        height: 0.8vw;
+    }
+}
+
+@media (min-width: 1024px) {
+    .slider::-moz-range-thumb {
+        width: 0.8vw;
+        height: 0.8vw;
+    }
+}
