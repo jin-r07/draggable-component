@@ -136,7 +136,7 @@ export default function Chrome() {
                         height: hasSizeChanged ? dimensions[size].height : prevSizeRef.current.dimensions.height,
                     }}
                 >
-                    <div className={`w-full xl:h-[3.5vh] h-fit flex items-center justify-between ${size === "full" ? "" : "xl:rounded-[0.5vw] rounded-md"} bg-[#201F1F] text-white xl:px-[0.2vw] px-1 xl:py-[0.6vw] py-1`}>
+                    <div className={`w-full xl:h-[3.5vh] h-fit flex items-center justify-between ${size === "full" ? "" : "xl:rounded-tl-[0.5vw] rounded-tl-md xl:rounded-tr-[0.5vw] rounded-tr-md"} bg-[#201F1F] text-white xl:px-[0.2vw] px-1 xl:py-[0.6vw] py-1`}>
                         <h1 className="flex-1 text-center xl:text-[0.8vw] text-xs">Google Chrome</h1>
                         <div className="flex items-center justify-center xl:space-x-[0.3vw] space-x-1">
                             <div className="flex items-center justify-center">
