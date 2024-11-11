@@ -17,7 +17,7 @@ export default function App() {
   }, []);
 
   return (
-    <main className="w-full h-screen bg-[url('./assets/wallpapers/981868.webp')] bg-center bg-cover bg-no-repeat">
+    <main className="w-full h-screen bg-[url('./assets/wallpapers/5478913.webp')] bg-center bg-cover bg-no-repeat">
       {isLoading ?
         <Preloader />
         :

@@ -100,7 +100,7 @@ export default function ShowApplications() {
 
     return (
         <motion.div
-            className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-75 text-white flex flex-col items-center font-DMSans z-20"
+            className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black via-black/75 to-black/65 text-white flex flex-col items-center font-DMSans z-20"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
