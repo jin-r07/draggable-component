@@ -206,7 +206,7 @@ export default function Chrome() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="bg-[#111111] xl:ml-[0.7vw] ml-3 text-[#ACB0B4] rounded-full w-full h-fit">
+                            <div className="bg-[#111111] xl:ml-[0.7vw] ml-3 text-[#ACB0B4] rounded-full w-full h-auto">
                                 <p className="xl:px-[0.6vw] px-2 xl:py-[0.2vh] py-0.5 leading-none xl:text-[0.7vw] text-xs">https://www.google.com</p>
                             </div>
                         </div>
