@@ -184,11 +184,11 @@ export default function Chrome() {
                         </div>
                     </div>
 
-                    <div className="w-full xl:h-[3vh] h-fit bg-[#333333]">
+                    <div className="w-full xl:h-[2.5vh] h-fit bg-[#333333]">
                         <div className="flex items-center leading-none xl:px-[0.2vw] px-1 xl:py-[0.2vh] py-0.5 xl:pl-[0.5vw] pl-2">
                             <div className="flex items-center justify-center xl:space-x-[0.3vw] space-x-1">
                                 <div className="flex items-center justify-center">
-                                    <div className="relative xl:w-[1.2vw] w-4 xl:h-[2.4vh] h-4 hover:bg-gray-700 rounded-full flex items-center justify-center" onClick={handleClose}>
+                                    <div className="relative xl:w-[1vw] w-3.5 xl:h-[2vh] h-3.5 hover:bg-gray-700 rounded-full flex items-center justify-center" onClick={handleClose}>
                                         <img
                                             src={RefreshIcon}
                                             alt="Minimize"
@@ -197,7 +197,7 @@ export default function Chrome() {
                                     </div>
                                 </div>
                                 <div className="flex items-center justify-center">
-                                    <div className="relative xl:w-[1.2vw] w-4 xl:h-[2.4vh] h-4 hover:bg-gray-700 rounded-full flex items-center justify-center" onClick={handleClose}>
+                                    <div className="relative xl:w-[1vw] w-3.5 xl:h-[2vh] h-3.5 hover:bg-gray-700 rounded-full flex items-center justify-center" onClick={handleClose}>
                                         <img
                                             src={HomeIcon}
                                             alt="Minimize"
@@ -206,8 +206,8 @@ export default function Chrome() {
                                     </div>
                                 </div>
                             </div>
-                            <div>
-                                google.com
+                            <div className="bg-[#111111] xl:ml-[0.7vw] ml-3 text-[#ACB0B4] rounded-full w-full h-fit">
+                                <p className="xl:px-[0.6vw] px-2 xl:py-[0.2vh] py-0.5 leading-none xl:text-[0.7vw] text-xs">https://www.google.com</p>
                             </div>
                         </div>
                     </div>
