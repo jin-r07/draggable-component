@@ -143,7 +143,7 @@ export default function Chrome() {
                                     <img
                                         src={MinimizeIcon}
                                         alt="Minimize"
-                                        className="object-contain absolute transform -translate-y-[15%]"
+                                        className="object-contain absolute transform -translate-y-[15%] w-full h-full"
                                     />
                                 </div>
                             </div>
@@ -154,7 +154,7 @@ export default function Chrome() {
                                         <img
                                             src={RestoreIcon}
                                             alt="Minimize"
-                                            className="object-contain absolute"
+                                            className="object-contain absolute w-full h-full"
                                         />
                                     </div>
                                 </div>
@@ -164,7 +164,7 @@ export default function Chrome() {
                                         <img
                                             src={MaximizeIcon}
                                             alt="Minimize"
-                                            className="object-contain absolute"
+                                            className="object-contain absolute w-full h-full"
                                         />
                                     </div>
                                 </div>
@@ -174,7 +174,7 @@ export default function Chrome() {
                                     <img
                                         src={CloseIcon}
                                         alt="Minimize"
-                                        className="object-contain absolute"
+                                        className="object-contain absolute w-full h-full"
                                     />
                                 </div>
                             </div>
