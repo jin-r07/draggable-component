@@ -57,7 +57,7 @@ export default function LeftNavbar({ className, ...props }) {
                             <img
                                 src={item.icon}
                                 alt={item.label}
-                                className="object-contain xl:p-[0.3vw] p-1"
+                                className="object-contain xl:p-[0.3vw] p-1 w-full h-full"
                             />
                         </div>
                         {/* Tooltip Label */}
@@ -81,7 +81,7 @@ export default function LeftNavbar({ className, ...props }) {
                             <img
                                 src={item.icon}
                                 alt={item.label}
-                                className="object-contain xl:p-[0.3vw] p-1"
+                                className="object-contain xl:p-[0.3vw] p-1 w-full h-full"
                             />
                         </div>
                         {/* Tooltip Label */}

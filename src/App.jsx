@@ -8,7 +8,7 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    alert("Work in progress")
+    // alert("Work in progress")
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 2000);
@@ -18,16 +18,16 @@ export default function App() {
 
   return (
     <main className="w-full h-screen bg-[url('./assets/wallpapers/981868.webp')] bg-center bg-cover bg-no-repeat">
-      {isLoading ?
+      {/* {isLoading ?
         <Preloader />
         :
         <ActiveProvider>
           <Index />
         </ActiveProvider>
-      }
-      {/* <ActiveProvider>
+      } */}
+      <ActiveProvider>
         <Index />
-      </ActiveProvider> */}
+      </ActiveProvider>
     </main>
   );
 }
