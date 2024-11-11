@@ -6,6 +6,8 @@ import MinimizeIcon from "../../assets/icons/window-minimize-symbolic.svg";
 import MaximizeIcon from "../../assets/icons/window-maximize-symbolic.svg";
 import RestoreIcon from "../../assets/icons/window-restore-symbolic.svg";
 import CloseIcon from "../../assets/icons/window-close-symbolic.svg";
+import HomeIcon from "../../assets/icons/chrome_home.svg";
+import RefreshIcon from "../../assets/icons/chrome_refresh.svg";
 
 export default function Chrome() {
     const isClient = typeof window !== "undefined";
@@ -181,6 +183,35 @@ export default function Chrome() {
                             </div>
                         </div>
                     </div>
+
+                    <div className="w-full xl:h-[3vh] h-fit bg-[#333333]">
+                        <div className="flex items-center leading-none xl:px-[0.2vw] px-1 xl:py-[0.2vh] py-0.5 xl:pl-[0.5vw] pl-2">
+                            <div className="flex items-center justify-center xl:space-x-[0.3vw] space-x-1">
+                                <div className="flex items-center justify-center">
+                                    <div className="relative xl:w-[1.2vw] w-4 xl:h-[2.4vh] h-4 hover:bg-gray-700 rounded-full flex items-center justify-center" onClick={handleClose}>
+                                        <img
+                                            src={RefreshIcon}
+                                            alt="Minimize"
+                                            className="object-contain absolute w-full h-full"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="flex items-center justify-center">
+                                    <div className="relative xl:w-[1.2vw] w-4 xl:h-[2.4vh] h-4 hover:bg-gray-700 rounded-full flex items-center justify-center" onClick={handleClose}>
+                                        <img
+                                            src={HomeIcon}
+                                            alt="Minimize"
+                                            className="object-contain absolute w-full h-full"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                google.com
+                            </div>
+                        </div>
+                    </div>
+
                     <div className="p-4 bg-white w-full h-full">
                         <input
                             type="text"
