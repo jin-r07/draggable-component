@@ -51,6 +51,7 @@ export default function Chrome() {
     const handleClose = () => {
         if (isClient) {
             localStorage.removeItem("searchQuery");
+            localStorage.removeItem("chromeSize");
         }
         setTimeout(() => removeIcon("google_chrome"), 250);
         setIsVisible(false);
