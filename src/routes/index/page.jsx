@@ -27,24 +27,17 @@ export default function Index() {
     ];
 
     const handleSingleClick = (iconFor) => {
-        // Set active icon for single-click effect, ensuring only one icon is active at a time
         setActiveIcon(iconFor);
     };
 
     const handleDoubleClick = (iconFor) => {
-        // Trigger toggle action on double-click
         toggleIcon(iconFor);
-
-        // Apply the double-click effect, ensuring only one icon shows bg-opacity-20 at a time
         setActiveIcon(iconFor);
-
-        // Clear the double-clicked effect after 1 second
         setTimeout(() => {
-            setActiveIcon(null); // Clear active icon after double-click effect duration
-        }, 1000); // 1 second delay for double-click effect
+            setActiveIcon(null);
+        }, 1000);
     };
 
-    // Function to handle clicks outside the icon divs
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (buttonRefs.current.every(ref => ref && !ref.contains(event.target))) {
@@ -63,7 +56,6 @@ export default function Index() {
             <TopNavbar className="col-span-2" />
             <LeftNavbar className="row-span-2" />
 
-            {/* Main Content Area with Icons Positioned at Top-Right in a Single Column */}
             <div className="col-start-2 row-start-2 relative">
                 <div className="absolute xl:top-[1vh] top-2 xl:right-[0.5vw] right-2 flex flex-col items-center">
                     {icons.map((item, index) => {
@@ -77,9 +69,7 @@ export default function Index() {
                             latency: 300,
                         });
 
-                        // Determine background opacity based on hover or active state
                         const isHovered = hoveredIcon === item.for;
-
                         const isActive = activeIcon === item.for;
 
                         return (
@@ -98,7 +88,6 @@ export default function Index() {
                                         className="object-contain w-full h-full"
                                     />
                                 </div>
-                                {/* Label Below Icon */}
                                 <span className="xl:mt-[0.8vh] mt-1 xl:text-[0.7vw] text-[0.65rem] text-white leading-none">
                                     {item.label}
                                 </span>
@@ -107,7 +96,9 @@ export default function Index() {
                     })}
                 </div>
                 {showApplications && <ShowApplications />}
-                {active.google_chrome?.active && active.google_chrome.visible && <Chrome />}
+
+                {/* Conditionally Render Chrome Component with Moveable Wrapper */}
+                {active.google_chrome?.active && active.google_chrome.visible && (<Chrome />)}
             </div>
         </section>
     );

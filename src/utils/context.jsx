@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useCallback } from "react";
 
 const ActiveContext = createContext(null);
 
@@ -12,78 +12,63 @@ export const ActiveProvider = ({ children }) => {
     const [showApplications, setShowApplications] = useState(false);
 
     // Function to toggle an icon: activates if not present, deactivates if present
-    const toggleIconNavbar = (iconLabel) => {
+    const toggleIconNavbar = useCallback((iconLabel) => {
         setActive((prev) => {
             const currentState = prev[iconLabel];
 
             if (!currentState) {
-                // If the iconLabel doesn't exist, add it with active: true and visible: true
                 return {
                     ...prev,
-                    [iconLabel]: {
-                        active: true,
-                        visible: true,
-                    },
+                    [iconLabel]: { active: true, visible: true },
                 };
             }
 
-            // If the iconLabel exists, toggle the visibility state
             return {
                 ...prev,
                 [iconLabel]: {
                     ...currentState,
-                    visible: currentState.visible
-                        ? (showApplications ? currentState.visible : false)  // If visible, set to false if showApplications is false
-                        : true, // If visible is false, set it to true
+                    visible: currentState.visible ? (showApplications ? currentState.visible : false) : true,
                 },
             };
         });
         setShowApplications(false);
-    };
+    }, [showApplications]);
 
-    const toggleIcon = (iconLabel) => {
+    const toggleIcon = useCallback((iconLabel) => {
         setActive((prev) => {
             const currentState = prev[iconLabel];
 
             if (!currentState) {
-                // If the iconLabel doesn't exist, add it with active: true and visible: true
                 return {
                     ...prev,
-                    [iconLabel]: {
-                        active: true,
-                        visible: true,
-                    },
+                    [iconLabel]: { active: true, visible: true },
                 };
             }
 
-            // If the iconLabel exists, toggle the visibility state
             return {
                 ...prev,
-                [iconLabel]: {
-                    ...currentState,
-                    visible: currentState.visible ? currentState.visible : true, // Toggle visibility to true only
-                },
+                [iconLabel]: { ...currentState, visible: currentState.visible || true },
             };
         });
         setShowApplications(false);
-    };
+    }, []);
 
     // Function to remove a specific iconLabel
-    const removeIcon = (iconLabel) => {
+    const removeIcon = useCallback((iconLabel) => {
         setActive((prev) => {
-            const newState = { ...prev };  // Create a copy of the previous state
-            delete newState[iconLabel];    // Remove the icon from the state
+            const newState = { ...prev };
+            delete newState[iconLabel];
             return newState;
         });
-    };
+    }, []);
 
     // Function to toggle application visibility
-    const toggleApplications = () => {
-        setShowApplications(!showApplications);
-    };
+    const toggleApplications = useCallback(() => {
+        setShowApplications((prev) => !prev);
+    }, []);
 
     // Function to minimize an app by setting its visibility to false
-    const minimizeApp = (iconLabel) => {
+    const minimizeApp = useCallback((iconLabel) => {
         setActive((prev) => ({
             ...prev,
             [iconLabel]: {
@@ -91,10 +76,10 @@ export const ActiveProvider = ({ children }) => {
                 visible: false,
             }
         }));
-    };
+    }, []);
 
     // Function to restore a minimized app by setting its visibility to true
-    const restoreApp = (iconLabel) => {
+    const restoreApp = useCallback((iconLabel) => {
         setActive((prev) => ({
             ...prev,
             [iconLabel]: {
@@ -102,7 +87,7 @@ export const ActiveProvider = ({ children }) => {
                 visible: true,
             }
         }));
-    };
+    }, []);
 
     return (
         <ActiveContext.Provider value={{
@@ -118,4 +103,4 @@ export const ActiveProvider = ({ children }) => {
             {children}
         </ActiveContext.Provider>
     );
-}
+};
