@@ -121,7 +121,7 @@ export default function Chrome() {
 
     // Reset position to top-left when size changes to "full"
     useEffect(() => {
-        if (size === 'full') {
+        if (size === "full") {
             setDragPosition({ x: 0, y: 0 });
         }
     }, [size]);
@@ -234,7 +234,7 @@ export default function Chrome() {
                             </div>
                         </div>
 
-                        <div className="p-4 bg-white w-full h-full">
+                        <div className="p-4 bg-red-500 w-full h-full">
                             <input
                                 type="text"
                                 value={searchQuery}
