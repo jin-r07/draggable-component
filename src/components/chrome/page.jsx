@@ -28,6 +28,8 @@ export default function Chrome() {
 
     const [isVisible, setIsVisible] = useState(true);
 
+    const [dragPosition, setDragPosition] = useState({ x: 0, y: 0 });
+
     useEffect(() => {
         if (isClient) {
             const savedQuery = localStorage.getItem("searchQuery");
@@ -103,6 +105,7 @@ export default function Chrome() {
             const isWideScreen = window.matchMedia("(min-width: 1280px)").matches;
             setSize(isWideScreen ? "small" : "half");
             setHasSizeChanged(true);
+            setDragPosition({ x: 0, y: 0 });
         };
 
         handleResize();
@@ -111,11 +114,24 @@ export default function Chrome() {
         return () => window.removeEventListener("resize", handleResize);
     }, [size]);
 
+    // Update drag position when dragged
+    const handleDrag = (e, data) => {
+        setDragPosition({ x: data.x, y: data.y });
+    };
+
+    // Reset position to top-left when size changes to "full"
+    useEffect(() => {
+        if (size === 'full') {
+            setDragPosition({ x: 0, y: 0 });
+        }
+    }, [size]);
+
     return (
         <AnimatePresence>
             {isVisible && (
                 <Draggable
-                    defaultPosition={{ x: 0, y: 0 }}
+                    position={dragPosition}
+                    onDrag={handleDrag}
                     bounds="parent"
                 >
                     <motion.div
