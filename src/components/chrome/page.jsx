@@ -80,8 +80,8 @@ export default function Chrome() {
 
     const dimensions = {
         full: { width: "100%", height: "100%" },
-        half: { width: "80vw", height: "65vh" },
-        small: { width: "50vw", height: "60vh" },
+        half: { width: "75vw", height: "auto" },
+        small: { width: "50vw", height: "auto" },
     };
 
     const position = {

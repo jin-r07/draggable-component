@@ -52,7 +52,7 @@ export default function Index() {
     }, []);
 
     return (
-        <section className="w-full h-full grid xl:grid-cols-[3vw_auto] grid-cols-[3rem_auto] xl:grid-rows-[3vh_1fr] grid-rows-[1.25rem_1fr] font-DMSans">
+        <section className="w-full h-full grid xl:grid-cols-[3vw_auto] grid-cols-[3rem_auto] xl:grid-rows-[3vh_1fr] grid-rows-[1.25rem_1fr] font-DMSans overflow-hidden">
             <TopNavbar className="col-span-2" />
             <LeftNavbar className="row-span-2" />
 
