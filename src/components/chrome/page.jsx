@@ -87,7 +87,7 @@ export default function Chrome() {
     const position = {
         full: "top-0 left-0",
         half: "top-4 left-4",
-        small: "top-[2vh] left-[1.5vw]",
+        small: "top-[1.5vh] left-[1vw]",
     };
 
     // Track previous size and position dimensions
@@ -132,10 +132,11 @@ export default function Chrome() {
                 <Draggable
                     position={dragPosition}
                     onDrag={handleDrag}
+                    axis="both"
                     bounds="parent"
                 >
                     <motion.div
-                        className={`absolute w-full h-screen font-DMSans ${position[size]}`}
+                        className={`relative w-fit h-fit font-DMSans ${position[size]}`}
                         initial={{
                             opacity: 0,
                             width: dimensions[size].width,
@@ -248,8 +249,7 @@ export default function Chrome() {
                         </div>
                     </motion.div>
                 </Draggable>
-            )
-            }
+            )}
         </AnimatePresence >
     );
 }

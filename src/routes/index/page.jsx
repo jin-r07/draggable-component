@@ -52,11 +52,11 @@ export default function Index() {
     }, []);
 
     return (
-        <section className="grid xl:grid-cols-[3vw_auto] grid-cols-[3rem_auto] xl:grid-rows-[3vh_1fr] grid-rows-[1.25rem_1fr] w-full h-screen font-DMSans">
+        <section className="w-full h-full grid xl:grid-cols-[3vw_auto] grid-cols-[3rem_auto] xl:grid-rows-[3vh_1fr] grid-rows-[1.25rem_1fr] font-DMSans">
             <TopNavbar className="col-span-2" />
             <LeftNavbar className="row-span-2" />
 
-            <div className="col-start-2 row-start-2 relative">
+            <div className="relative col-start-2 row-start-2">
                 <div className="absolute xl:top-[1vh] top-2 xl:right-[0.5vw] right-2 flex flex-col items-center">
                     {icons.map((item, index) => {
                         const buttonRef = useRef(null);
@@ -95,9 +95,12 @@ export default function Index() {
                         );
                     })}
                 </div>
+
                 {showApplications && <ShowApplications />}
 
-                {active.google_chrome?.active && active.google_chrome.visible && (<Chrome />)}
+                {active.google_chrome?.active && active.google_chrome.visible && (
+                    <Chrome />
+                )}
             </div>
         </section>
     );

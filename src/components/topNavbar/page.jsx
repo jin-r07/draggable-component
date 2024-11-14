@@ -94,7 +94,7 @@ export default function TopNavbar({ className }) {
     return (
         <nav className={`fixed top-0 left-0 w-full xl:h-[3vh] h-5 ${className} bg-black xl:px-[1vw] px-2 font-DMSans z-40`}>
             <div className="relative w-full h-full flex items-center justify-between text-white xl:text-[0.8vw] text-xs">
-                <p ref={nameRef} onClick={() => handleSectionClick("name")} >&gt;_&nbsp;&nbsp;John</p>
+                <p ref={nameRef} onClick={() => handleSectionClick("name")} >Activities</p>
                 <p ref={timeRef} onClick={() => handleSectionClick("time")}>{currentTime}</p>
                 <div ref={iconsRef} onClick={() => handleSectionClick("icons")} className="flex items-center xl:gap-x-[0.4vw] gap-x-1">
                     <FaWifi />
@@ -118,7 +118,7 @@ export default function TopNavbar({ className }) {
                         className="absolute xl:top-[4vh] top-6 xl:right-[0.8vw] right-2 xl:w-[15vw] w-56 h-auto bg-[#272727] xl:rounded-[0.3vw] rounded-md xl:pt-0 pt-0.5 pointer-events-auto border-[1px] border-[#212121]"
                     >
                         {/* Triangle */}
-                        <div className="absolute xl:top-[-1vh] -top-1 right-[1vw] transform -translate-x-1/2 w-0 h-0 xl:border-l-[0.5vw] border-l-[6px] border-l-transparent xl:border-r-[0.5vw] border-r-[6px] border-r-transparent xl:border-b-[0.5vw] border-b-[6px] border-b-[#292929]" />
+                        <div className="absolute xl:top-[-0.9vh] -top-1 right-[1vw] transform -translate-x-1/2 w-0 h-0 xl:border-l-[0.5vw] border-l-[6px] border-l-transparent xl:border-r-[0.5vw] border-r-[6px] border-r-transparent xl:border-b-[0.5vw] border-b-[6px] border-b-[#292929]" />
                         <ControlCenter />
                     </motion.div>
                 )}
@@ -137,7 +137,7 @@ export default function TopNavbar({ className }) {
                     >
                         <div>
                             {/* Triangle */}
-                            <div className="absolute xl:top-[-1vh] -top-1 left-1/2 transform -translate-x-1/2 w-0 h-0 xl:border-l-[0.5vw] border-l-[6px] border-l-transparent xl:border-r-[0.5vw] border-r-[6px] border-r-transparent xl:border-b-[0.5vw] border-b-[6px] border-b-[#292929]" />
+                            <div className="absolute xl:top-[-0.8vh] -top-1 left-1/2 transform -translate-x-1/2 w-0 h-0 xl:border-l-[0.5vw] border-l-[6px] border-l-transparent xl:border-r-[0.5vw] border-r-[6px] border-r-transparent xl:border-b-[0.5vw] border-b-[6px] border-b-[#292929]" />
                             <div className="flex lg:flex-row flex-col w-full h-fit bg-[#272727] xl:p-[0.8vw] p-2 xl:rounded-[0.3vw] rounded-md">
                                 <div className="flex flex-col">
                                     <div className="lg:w-[30vw] w-full h-full flex items-center justify-center">
