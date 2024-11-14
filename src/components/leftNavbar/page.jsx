@@ -11,7 +11,7 @@ import { CgMenuGridO } from "react-icons/cg";
 import { useActive } from "../../utils/context";
 
 export default function LeftNavbar({ className, ...props }) {
-    const { active = [], toggleIconNavbar, showApplications, toggleApplications } = useActive() || {};
+    const { active = [], toggleIconNavbar, showApplications, setShowApplications } = useActive() || {};
 
     const icons = [
         { label: "Google Chrome", icon: chromeIcon, for: "google_chrome" },
@@ -94,7 +94,7 @@ export default function LeftNavbar({ className, ...props }) {
                 <div className="mt-auto xl:mb-[0.6vh] mb-1 relative group">
                     <div
                         className="xl:w-[2.5vw] w-10 xl:h-[4.5vh] h-10 bg-white bg-opacity-0 hover:bg-opacity-20 flex items-center justify-center xl:rounded-[0.3vw] rounded-md"
-                        onClick={() => toggleApplications(!showApplications)}
+                        onClick={() => setShowApplications(!showApplications)}
                     >
                         <CgMenuGridO className="text-white xl:text-[1.5vw] text-2xl" />
                     </div>

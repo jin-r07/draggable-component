@@ -97,7 +97,6 @@ export default function Index() {
                 </div>
                 {showApplications && <ShowApplications />}
 
-                {/* Conditionally Render Chrome Component with Moveable Wrapper */}
                 {active.google_chrome?.active && active.google_chrome.visible && (<Chrome />)}
             </div>
         </section>

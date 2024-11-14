@@ -49,7 +49,7 @@ const Icon = ({
 }
 
 export default function ShowApplications() {
-    const { toggleIcon = [], toggleApplications } = useActive() || {};
+    const { toggleIcon = [], setShowApplications } = useActive() || {};
 
     const icons = [
         { label: "Google Chrome", icon: chromeIcon, for: "google_chrome" },
@@ -75,7 +75,7 @@ export default function ShowApplications() {
     const handleDoubleClick = (iconFor) => {
         toggleIcon(iconFor);
         setActiveIcon(iconFor);
-        toggleApplications();
+        setShowApplications(false);
         setTimeout(() => {
             setActiveIcon(null);
         }, 0);

@@ -4,7 +4,7 @@ const ActiveContext = createContext(null);
 
 export const useActive = () => {
     return useContext(ActiveContext);
-};
+}
 
 export const ActiveProvider = ({ children }) => {
     const [active, setActive] = useState({}); // Track active and visible status per app
@@ -62,11 +62,6 @@ export const ActiveProvider = ({ children }) => {
         });
     }, []);
 
-    // Function to toggle application visibility
-    const toggleApplications = useCallback(() => {
-        setShowApplications((prev) => !prev);
-    }, []);
-
     // Function to minimize an app by setting its visibility to false
     const minimizeApp = useCallback((iconLabel) => {
         setActive((prev) => ({
@@ -96,11 +91,11 @@ export const ActiveProvider = ({ children }) => {
             toggleIcon,
             removeIcon,
             showApplications,
-            toggleApplications,
+            setShowApplications,
             minimizeApp,
             restoreApp
         }}>
             {children}
         </ActiveContext.Provider>
     );
-};
+}
