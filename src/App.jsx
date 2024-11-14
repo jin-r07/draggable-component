@@ -25,7 +25,7 @@ export default function App() {
           <Index />
         </ActiveProvider>
       }
-      {/* <ActiveProvider>
+      {/* <ActiveProvider>`
         <Index />
       </ActiveProvider> */}
     </main>

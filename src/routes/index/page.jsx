@@ -52,11 +52,11 @@ export default function Index() {
     }, []);
 
     return (
-        <section className="grid xl:grid-cols-[3vw_auto] grid-cols-[3rem_auto] xl:grid-rows-[3vh_1fr] grid-rows-[1.25rem_1fr] w-full h-screen font-DMSans overflow-hidden">
+        <section className="grid xl:grid-cols-[3vw_auto] grid-cols-[3rem_auto] xl:grid-rows-[3vh_1fr] grid-rows-[1.25rem_1fr] w-full h-screen font-DMSans">
             <TopNavbar className="col-span-2" />
             <LeftNavbar className="row-span-2" />
 
-            <div className="col-start-2 row-start-2 relative w-full xl:h-[calc(100vh-9.5vh)] lg:h-[calc(100vh-10.1vh)] md:h-[calc(100vh-13.5vh)] h-[calc(100vh - 3vh - 10vh)]">
+            <div className="col-start-2 row-start-2 relative">
                 <div className="absolute xl:top-[1vh] top-2 xl:right-[0.5vw] right-2 flex flex-col items-center">
                     {icons.map((item, index) => {
                         const buttonRef = useRef(null);

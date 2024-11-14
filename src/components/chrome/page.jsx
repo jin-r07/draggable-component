@@ -135,7 +135,7 @@ export default function Chrome() {
                     bounds="parent"
                 >
                     <motion.div
-                        className={`absolute font-DMSans ${position[size]}`}
+                        className={`absolute w-full h-screen font-DMSans ${position[size]}`}
                         initial={{
                             opacity: 0,
                             width: dimensions[size].width,

@@ -105,11 +105,11 @@ export default function ShowApplications() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
         >
-            <div className="relative xl:text-[0.9vw] text-xs xl:mt-[2vh] mt-3">
+            <div className="relative xl:text-[0.9vw] text-xs xl:mt-[2.1vh] mt-4">
                 <input
                     type="text"
                     placeholder="Type to Search"
-                    className="sm:w-[32vw] w-full xl:h-[4vh] xl:py-[0.1vh] py-1 xl:pl-[1.7vw] pl-6 bg-white text-black xl:rounded-[0.7vw] rounded-lg cursor-text focus:outline-none"
+                    className="sm:w-[32vw] w-full xl:h-[3vh] xl:py-0 py-0.5 xl:pl-[1.7vw] pl-6 bg-white text-black xl:rounded-[0.7vw] rounded-lg cursor-text focus:outline-none"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />
