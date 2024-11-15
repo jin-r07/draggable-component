@@ -10,7 +10,7 @@ import HomeIcon from "../../assets/icons/chrome_home.svg";
 import RefreshIcon from "../../assets/icons/chrome_refresh.svg";
 import Draggable from "react-draggable";
 
-export default function Chrome() {
+export default function Terminal() {
     const isClient = typeof window !== "undefined";
 
     const { removeIcon = [], minimizeApp = [] } = useActive() || {};
@@ -18,7 +18,7 @@ export default function Chrome() {
     const [searchQuery, setSearchQuery] = useState("");
 
     const [size, setSize] = useState(() => {
-        if (isClient && localStorage.getItem("chromeSize") === "full") {
+        if (isClient && localStorage.getItem("terminal") === "full") {
             return "full";
         }
         return window.matchMedia("(min-width: 1280px)").matches ? "small" : "half";
@@ -58,12 +58,12 @@ export default function Chrome() {
             localStorage.removeItem("searchQuery");
             localStorage.removeItem("chromeSize");
         }
-        setTimeout(() => removeIcon("google_chrome"), 250);
+        setTimeout(() => removeIcon("terminal"), 250);
         setIsVisible(false);
     };
 
     const handleMinimize = () => {
-        minimizeApp("google_chrome");
+        minimizeApp("terminal");
     };
 
     const handleSizeChange = (newSize) => {
@@ -136,7 +136,7 @@ export default function Chrome() {
                     bounds="parent"
                 >
                     <motion.div
-                        className={`relative w-fit h-fit font-DMSans ${position[size]}`}
+                        className={`absolute w-fit h-fit font-DMSans ${position[size]}`}
                         initial={{
                             opacity: 0,
                             width: dimensions[size].width,

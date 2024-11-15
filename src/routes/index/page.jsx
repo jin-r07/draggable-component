@@ -9,6 +9,7 @@ import gmailIcon from "../../assets/icons/gmail.svg";
 import { useActive } from "../../utils/context";
 import ShowApplications from "../../components/showApplications/page";
 import Chrome from "../../components/chrome/page";
+import Terminal from "../../components/terminal/page";
 
 export default function Index() {
     const { active = [], toggleIcon, showApplications } = useActive() || {};
@@ -98,9 +99,19 @@ export default function Index() {
 
                 {showApplications && <ShowApplications />}
 
-                {active.google_chrome?.active && active.google_chrome.visible && (
-                    <Chrome />
-                )}
+                {/* Dynamically render active components */}
+                {Object.keys(active).map((key) => {
+                    const component = active[key];
+
+                    if (component.active && component.visible) {
+                        if (key === "google_chrome") {
+                            return <Chrome key={key} />;
+                        } else if (key === "terminal") {
+                            return <Terminal key={key} />;
+                        }
+                    }
+                    return null;
+                })}
             </div>
         </section>
     );

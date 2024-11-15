@@ -92,7 +92,7 @@ export default function TopNavbar({ className }) {
     }, []);
 
     return (
-        <nav className={`fixed top-0 left-0 w-full xl:h-[3vh] h-5 ${className} bg-black xl:px-[1vw] px-2 font-DMSans z-40`}>
+        <nav className={`fixed top-0 left-0 w-full xl:h-[3vh] h-5 ${className} bg-black xl:px-[0.5vw] px-2 font-DMSans z-40`}>
             <div className="relative w-full h-full flex items-center justify-between text-white xl:text-[0.8vw] text-xs">
                 <p ref={nameRef} onClick={() => handleSectionClick("name")} >Activities</p>
                 <p ref={timeRef} onClick={() => handleSectionClick("time")}>{currentTime}</p>
